@@ -1,0 +1,204 @@
+[
+  {
+    "id": "Q01",
+    "org": "northbridge-university",
+    "category": "direct",
+    "question": "What is the deadline to apply for the merit scholarship?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q02",
+    "org": "northbridge-university",
+    "category": "policy",
+    "question": "Can scholarships be combined?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q03",
+    "org": "northbridge-university",
+    "category": "procedural",
+    "question": "How do I appeal a scholarship decision?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q04",
+    "org": "northbridge-university",
+    "category": "multi-decision",
+    "question": "I'm a full-time second-year student with a 3.7 GPA. My only other award is a sports scholarship (no need-based grant). Am I eligible for the merit scholarship, and which tier would I get?",
+    "expect": {
+      "status": "answered",
+      "verdict": "ELIGIBLE",
+      "min_decisions": 2,
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q05",
+    "org": "northbridge-university",
+    "category": "multi-condition",
+    "question": "I'm a first-year student with a 3.9 GPA. Am I eligible for the merit scholarship?",
+    "expect": {
+      "status": "answered",
+      "verdict": "NOT_ELIGIBLE",
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q06",
+    "org": "northbridge-university",
+    "category": "needs-info",
+    "question": "Am I eligible for the merit scholarship?",
+    "expect": {
+      "status": "needs_info",
+      "verdict": "NEEDS_INFO"
+    }
+  },
+  {
+    "id": "Q07",
+    "org": "northbridge-university",
+    "category": "comparison",
+    "question": "What is the difference between the merit scholarship and the need-based grant?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q08",
+    "org": "northbridge-university",
+    "category": "no-answer",
+    "question": "What is on the cafeteria menu on Friday?",
+    "expect": {
+      "status": "no_answer"
+    }
+  },
+  {
+    "id": "Q09",
+    "org": "northbridge-university",
+    "category": "policy",
+    "question": "Are pets allowed in student housing?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Student_Housing.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q10",
+    "org": "acme-corp-hr",
+    "category": "direct",
+    "question": "How many days of annual leave do employees get?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Leave_Policy.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q11",
+    "org": "acme-corp-hr",
+    "category": "procedural",
+    "question": "How do I submit an expense claim?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Expense_Reimbursement.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q12",
+    "org": "acme-corp-hr",
+    "category": "multi-decision",
+    "question": "I've worked at Acme for 14 months, my manager approved my request, my role isn't on-site only, and I work from home 3 days a week. Am I eligible for the remote work stipend?",
+    "expect": {
+      "status": "answered",
+      "verdict": "ELIGIBLE",
+      "min_decisions": 2,
+      "sources": [
+        "Remote_Work_Policy.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q13",
+    "org": "acme-corp-hr",
+    "category": "multi-condition",
+    "question": "I joined Acme 4 months ago. Am I eligible for parental leave?",
+    "expect": {
+      "status": "answered",
+      "verdict": "NOT_ELIGIBLE",
+      "sources": [
+        "Leave_Policy.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q14",
+    "org": "acme-corp-hr",
+    "category": "comparison",
+    "question": "How does sick leave compare to casual leave?",
+    "expect": {
+      "status": "answered",
+      "sources": [
+        "Leave_Policy.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q15",
+    "org": "acme-corp-hr",
+    "category": "no-answer",
+    "question": "What is Acme's current stock price?",
+    "expect": {
+      "status": "no_answer"
+    }
+  },
+  {
+    "id": "Q16",
+    "org": "acme-corp-hr",
+    "category": "isolation",
+    "question": "Am I eligible for the merit scholarship with a 3.7 GPA?",
+    "expect": {
+      "status": "no_answer",
+      "forbidden_sources": [
+        "Scholarship_Rules.pdf"
+      ]
+    }
+  },
+  {
+    "id": "Q17",
+    "org": "northbridge-university",
+    "category": "isolation",
+    "question": "How many days of sick leave do employees get?",
+    "expect": {
+      "status": "no_answer",
+      "forbidden_sources": [
+        "Leave_Policy.pdf"
+      ]
+    }
+  }
+]

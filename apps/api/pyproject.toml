@@ -1,0 +1,63 @@
+[project]
+name = "psi-api"
+version = "0.1.0"
+description = "Multi-tenant AI Knowledge & Decision Assistant — API"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.8",
+  "pydantic-settings>=2.4",
+  "email-validator>=2.2",
+  "python-multipart>=0.0.9",
+  "sqlalchemy[asyncio]>=2.0.30",
+  "asyncpg>=0.29",
+  "psycopg2-binary>=2.9",
+  "alembic>=1.13",
+  "pgvector>=0.3",
+  "bcrypt>=4.1",
+  "pyjwt>=2.9",
+  "slowapi>=0.1.9",
+  "pypdf>=4.3",
+  "pdfplumber>=0.11",
+  "llama-index-core>=0.12",
+  "llama-index-vector-stores-postgres>=0.4",
+  "fastembed>=0.4",
+  "langgraph>=0.2.60",
+  "groq>=0.11",
+  "httpx>=0.27",
+  "scikit-learn>=1.5",
+  "joblib>=1.4",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "reportlab>=4.2",
+  "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/modules/reasoning/**/prompts/*.py" = ["E501"]
+"app/modules/reasoning/understanding/query_planner.py" = ["E501"]
+"tests/**" = ["E501"]

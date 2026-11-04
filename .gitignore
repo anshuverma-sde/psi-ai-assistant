@@ -1,0 +1,33 @@
+# env / secrets (each app has its own; only *.example files are committed)
+.env
+.env.local
+**/.env
+**/.env.local
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+apps/api/storage/
+apps/api/.cache/
+apps/api/app/modules/reasoning/understanding/classifier/artifacts/*.joblib
+
+# node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# misc
+.DS_Store
+.claude/
+samples/.seed-output.json
+demo/external-site.local.html
+
+# build artifacts / local-only files
+*.egg-info/
+AI_Knowledge_Decision_Assistant_Assignment.pdf
+*.png

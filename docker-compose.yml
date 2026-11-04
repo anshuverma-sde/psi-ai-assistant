@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: psi-db
+    environment:
+      POSTGRES_USER: psi
+      POSTGRES_PASSWORD: psi
+      POSTGRES_DB: psi
+    ports:
+      - "5433:5432"
+    volumes:
+      - psi-db-data:/var/lib/postgresql/data
+      - ./apps/api/scripts/db-init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U psi -d psi"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  psi-db-data:

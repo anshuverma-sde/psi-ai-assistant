@@ -1,0 +1,47 @@
+/* Theme colors. Change --primary (and the neutrals if you like) to restyle the whole app;
+   the hover, soft and ring shades below are derived from it. */
+
+:root {
+  /* Brand: deep teal */
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  --primary-ink: var(--primary); /* text/icon accent on white; use a darker shade if --primary is a pastel */
+
+  /* Neutrals: warm stone */
+  --background: #f6f5f2;
+  --surface: #ffffff;
+  --foreground: #1c1917;
+  --muted: #57534e;
+  --subtle: #8f8a84;
+  --border: #e7e4de;
+
+  /* Status */
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #dc2626;
+
+  /* Shape */
+  --radius: 0.75rem;
+  --shadow-sm: 0 1px 2px rgb(28 25 23 / 0.05);
+  --shadow-md: 0 1px 2px rgb(28 25 23 / 0.04), 0 4px 16px -4px rgb(28 25 23 / 0.08);
+  --shadow-lg: 0 24px 48px -12px rgb(28 25 23 / 0.18), 0 4px 12px rgb(28 25 23 / 0.06);
+
+  /* derived from the values above */
+  --primary-hover: color-mix(in oklab, var(--primary) 85%, black);
+  --primary-soft: color-mix(in oklab, var(--primary) 8%, var(--surface));
+  --primary-muted: color-mix(in oklab, var(--primary) 18%, var(--surface));
+  --primary-deep: color-mix(in oklab, var(--primary) 55%, black);
+  --brand-gradient: linear-gradient(150deg, var(--primary) 0%, var(--primary-deep) 100%);
+  --ring: color-mix(in oklab, var(--primary-ink) 28%, transparent);
+  --danger-foreground: #ffffff;
+  --surface-muted: color-mix(in oklab, var(--foreground) 3.5%, var(--surface));
+  --border-strong: color-mix(in oklab, var(--foreground) 16%, var(--surface));
+  --success-soft: color-mix(in oklab, var(--success) 9%, var(--surface));
+  --warning-soft: color-mix(in oklab, var(--warning) 10%, var(--surface));
+  --danger-soft: color-mix(in oklab, var(--danger) 8%, var(--surface));
+}
+
+/* Alternative themes are just different base values. Apply with <html data-theme="indigo">.
+[data-theme="indigo"] { --primary: #4f46e5; }
+[data-theme="rose"]   { --primary: #be123c; }
+*/
