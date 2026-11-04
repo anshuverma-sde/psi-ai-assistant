@@ -4,7 +4,7 @@ PY := $(API_DIR)/.venv/bin/python
 API_PORT ?= 8000
 WEB_PORT ?= 3000
 
-.PHONY: help setup db migrate api web build pdfs seed eval test lint openapi demo
+.PHONY: help setup db migrate api web build pdfs seed eval test lint openapi
 
 help:  ## Show available commands
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2}'
@@ -49,7 +49,3 @@ lint:  ## Lint backend + typecheck/lint frontend
 openapi:  ## Export OpenAPI + regenerate frontend API types
 	$(PY) $(API_DIR)/scripts/export_openapi.py
 	cd $(WEB_DIR) && pnpm gen:api
-
-demo:  ## Build demo/external-site.local.html with seeded tokens and serve it on :5500
-	node demo/fill-tokens.mjs http://localhost:$(WEB_PORT)
-	python3 -m http.server 5500 --directory demo

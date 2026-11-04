@@ -25,7 +25,6 @@ next-env.d.ts
 .DS_Store
 .claude/
 samples/.seed-output.json
-demo/external-site.local.html
 
 # build artifacts / local-only files
 *.egg-info/
